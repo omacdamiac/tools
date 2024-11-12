@@ -1,0 +1,129 @@
+<div class="container-fluid">
+    <div class="row mb-5">
+        <div class="col">
+            <h1>{{title }}</h1>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- FILTRO -->
+    <div class="row mb-5 align-items-end">
+        <div class="col-10">
+            <div class="row">
+                @for(cmb of lista; track cmb.id){
+                <div class="col">
+                    <label for="">{{ cmb.name }}</label>
+                    <app-select></app-select>
+                </div>
+                }
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="row">
+                <div class="col filter d-flex justify-content-between align-items-end">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="refresh"/>
+                    <mat-icon routerLink="/home/request" aria-hidden="false" aria-label="Example home icon" fontIcon="add_box"/>
+                </div>
+                <div class="col"> <button class="btn btn-dark" routerLink="/home/feedback">Feedback</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- LISTADO -->
+    <div class="row mb-4">
+        <div class="col">
+            <h3>Request list</h3>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @for(card of cards; track card.id){
+            <div class="card mb-4">
+                <div class="card-body pb-0">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">Request 15 ...</h5>
+                                <p class="card-text mb-2">Texto de descripción del request.</p>
+                                <button class="btn btn-dark">Testear</button>
+                                <button class="mx-3 btn btn-secondary">Duplicar</button>
+                            </div>
+                            <div class="col text-end opciones">
+                                <div class="row 0 mb-5">
+                                    <div class="col pe-4 d-flex justify-content-end align-items-center">
+                                        <div>
+                                            <div class="d-flex flex-col align-items-stretch">
+                                                <span class="pendiente">pendiente</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="d-flex flex-column align-items-center opcion"
+                                                (click)="evento()">
+                                                <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                    fontIcon="calendar_today"></mat-icon>
+                                                <span>28/10/2024</span>
+                                            </div>
+                                            <div class="d-flex flex-column align-items-center opcion">
+                                                <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                    fontIcon="person_outline"></mat-icon>
+                                                <span>Ana Loarte</span>
+                                            </div>
+                                            <div class="d-flex flex-column align-items-center opcion">
+                                                <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                    fontIcon="delete_outline"></mat-icon>
+                                                <span>Eliminar</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col pe-0 d-flex justify-content-end align-items-center">
+                                        <div>
+                                            <div class="d-flex flex-column align-items-center opcion">
+                                                <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                    fontIcon="download"></mat-icon>
+                                                <span>Descargar</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            }
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- PAGINADO -->
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

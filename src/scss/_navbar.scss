@@ -1,0 +1,13 @@
+@import './color';
+
+.nav-item>a {
+    color: $navitem_text;
+    border-bottom: 1px solid $navitem_border;
+    width: 200px;
+    text-align: center;
+    &.active {
+        color: $black;
+        border-bottom: 1px solid $black;
+    
+    }
+}

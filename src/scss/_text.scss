@@ -1,0 +1,53 @@
+@import './color';
+
+h {
+  &1 {
+    font-size: 3rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+  color: $opciones;
+}
+
+label,
+input {
+  font-size: 1rem;
+}
+
+@mixin estado {
+  line-height: 1rem;
+  font-size: 1rem;
+  padding: 3px 4px;
+  color: $estado;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.pendiente {
+  @include estado;
+  background: $pendiente;
+}
+.procesado {
+  @include estado;
+  background: $procesado;
+}
+.error {
+  @include estado;
+  background: $error;
+}
+
+.opciones {
+    color: $opciones;
+    font-size: 0.875rem;
+    text-decoration: none;
+    & .opcion {
+        cursor:pointer;
+        margin-left: 20px;
+        width: fit-content;
+        &:hover {
+            color: $black;
+        }
+    }
+}
